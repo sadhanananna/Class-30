@@ -11,24 +11,26 @@ class Block{
         World.add(world, this.body);
       }
       display(){
-        
+        console.log(this.visibility)
         if(this.body.speed < 3){
           imageMode(CENTER)
-          image(this.image, this.body.position.x, this.body.position.y, 50, 50);
+          image(this.image, this.body.position.x, this.body.position.y, 30, 40);
           
          }
          else{
            World.remove(world, this.body);
            push();
-           this.visiblity = this.visiblity - 5;
-           tint(255,this.visiblity);
-           image(this.image, this.body.position.x, this.body.position.y, 50, 50);
+           this.visibility = this.visibility - 5;
+           tint(255,this.visibility);
+           image(this.image, this.body.position.x, this.body.position.y, 30, 40);
            pop();
          }
          
        }
        score(){
-        if (this.visiblity < 0 && this.visiblity > -1005){
+        if (this.visibility < 0 && this.visibility > -1005){
+          
+         console.log(this.visibility)
           score++
         }
        }
